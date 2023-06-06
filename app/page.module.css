@@ -1,10 +1,12 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background-image: url('../public/assets/img/central-computer-processor-with-neon-lights-integrated-microchip-circuit-board-server.jpg');
+  background-size: cover;
 }
 
 .description {
@@ -226,4 +228,8 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.content_main{
+  background-image: url('../public/assets/img/central-computer-processor-with-neon-lights-integrated-microchip-circuit-board-server.jpg');
 }
