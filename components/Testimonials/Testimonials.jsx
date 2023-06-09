@@ -1,17 +1,17 @@
 "use client"
 import React from 'react'
-const orang1 = '/assets/images/Testimonial/orang1.png'
-const orang2 = '/assets/images/Testimonial/orang2.png'
-const orang3 = '/assets/images/Testimonial/orang3.png'
-const orang4 = '/assets/images/Testimonial/orang4.png'
-const orang5 = '/assets/images/Testimonial/orang5.png'
-const orang6 = '/assets/images/Testimonial/orang6.png'
-const orang7 = '/assets/images/Testimonial/orang7.png'
-const bg1 = '/assets/images/Testimonial/bg/1.png'
-const bg2 = '/assets/images/Testimonial/bg/2.png'
+const orang1 = "/assets/images/Testimonial/orang1.png"
+const orang2 = "/assets/images/Testimonial/orang2.png"
+const orang3 = "/assets/images/Testimonial/orang3.png"
+const orang4 = "/assets/images/Testimonial/orang4.png"
+const orang5 = "/assets/images/Testimonial/orang5.png"
+const orang6 = "/assets/images/Testimonial/orang6.png"
+const orang7 = "/assets/images/Testimonial/orang7.png"
+const bg1 = "/assets/images/Testimonial/bg/1.png"
+const bg2 = "/assets/images/Testimonial/bg/2.png"
 import { useState } from 'react'
-const pojokatas =  '/assets/pojokatas.png'
-const pojokbwh =  '/assets/pojokbawah.png'
+const pojokatas = "/assets/pojokatas.png"
+const pojokbwh =  "/assets/pojokbawah.png"
 
 
 
