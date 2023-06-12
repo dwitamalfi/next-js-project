@@ -1,13 +1,18 @@
 import moment from "moment";
 
 const ImgEvent = "/assets/images/Events/event_img.png";
-import getEvent from '@/services/events'
+import { getEvent } from '@/services/events'
 import Link from 'next/link';
 import { ListEvent } from "@/components/Event/ListEvent";
 
 export default async function Event() {
   const now = moment().format("YYYY-MM-DD HH:mm:ss");
-  const response = await getEvent();
+  const param = {
+    "page": 1,
+    "limit": 999,
+    "search": ''
+  }
+  const response = await getEvent(param);
   const data = response.data
   let tempClosestEvent = [];
   let tempPastEvent = [];

@@ -8,12 +8,18 @@ import Benefit from '@/components/Benefit/Benefit'
 import Testimonials from '@/components/Testimonials/Testimonials'
 import FAQs from '@/components/FAQ/FAQs'
 import Youtube from '@/components/Youtube/Youtube'
-import getEvent from '@/services/events'
 import moment from "moment";
+import { getEvent } from '@/services/events'
 
 
 export default async function Home() {
-  const data = await getEvent();
+  const param = {
+    "page": 1,
+    "limit": 999,
+    "search": ''
+  };
+
+  const data = await getEvent(param);
   const new_data = data.data.filter((item) => {
     const event_date = moment(item?.Tanggal_waktu_event)?.format(
       "YYYY-MM-DD"
@@ -43,28 +49,7 @@ export default async function Home() {
 
 async function getData() {
   const res = await fetch(`https://dev.cms.dimulai.apps360.id/items/Event?page=1&limit=999&search=`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-  console.log("res",res)
-  var new_response = ''
-  // if (res?.data) {
-  //   const filteredEvent = res?.data
-  //     ?.filter((item) => {
-  //       const event_date = moment(item?.Tanggal_waktu_event)?.format(
-  //         "YYYY-MM-DD"
-  //       );
-  //       return (
-  //         event_date >= moment().format("YYYY-MM-DD")
-  //       );
-  //     })
-  //     ?.sort(
-  //       (a, b) =>
-  //         new Date(a?.Tanggal_waktu_event) - new Date(b?.Tanggal_waktu_event)
-  //     );
-  //     new_response = filteredEvent
-  //   }
-  // Recommendation: handle errors
-
+  
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');

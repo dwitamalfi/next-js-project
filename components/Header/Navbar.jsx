@@ -6,12 +6,12 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [event, setEvent] = useState([]);
 
-  // useEffect(() => {
-  //   const closest_event = JSON.parse(localStorage.getItem('closest_event'));
-  //   if (closest_event?.length) {
-  //     setEvent(closest_event);
-  //   }
-  // }, [localStorage.getItem('closest_event')]);
+  useEffect(() => {
+    const closest_event = JSON.parse(localStorage.getItem('closest_event'));
+    if (closest_event?.length) {
+      setEvent(closest_event);
+    }
+  }, []);
 
   const scrollWithOffset = (el, section) => {
     let yCoordinate
@@ -114,26 +114,25 @@ export const Navbar = () => {
               Promo
             </a>
           </li>
-          {/* <li>
+          <li>
             {event?.length > 0 ? (
               <Link
-                to='/event'
+                href='/events'
                 className="inline-flex items-center bg-emerald-500 justify-center h-11 px-6 font-blueberrymd tracking-wide text-white transition duration-200 rounded-lg shadow-md hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
                 NEW Event!
               </Link>
             ) : (
               <Link
-                smooth
                 className="inline-flex items-center bg-emerald-500 justify-center h-11 px-6 font-blueberrymd tracking-wide text-white transition duration-200 rounded-lg shadow-md hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                to={'/#ContentThumbnail'}
+                href={'/#ContentThumbnail'}
               >
                 Kenalan Yuk
               </Link>
             )}
-          </li> */}
+          </li>
         </ul>
-        {/* <div className="md:hidden mr-30">
+        <div className="md:hidden mr-30">
           <button
             aria-label="Open Menu"
             title="Open Menu"
@@ -193,40 +192,36 @@ export const Navbar = () => {
                   <ul className="space-y-4">
                   <li>
                     <Link
-                      smooth
                       className="font-blueberry tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
                       to={'/#ContentThumbnail'}
-                      scroll={el => scrollWithOffset(el, 'ContentThumbnail')}
+                      scroll={false}
                     >
                       Konten
                     </Link>
                     </li>
                     <li>
                       <Link
-                        smooth
                         className="font-blueberry tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
                         to={'/#product'}
-                        scroll={el => scrollWithOffset(el, 'product')}
+                        scroll={false}
                       >
                         Produk
                       </Link>
                     </li>
                     <li>
                       <Link
-                        smooth
                         className="font-blueberry tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
                         to={'/#about'}
-                        scroll={el => scrollWithOffset(el, 'about')}
+                        scroll={false}
                       >
                         Tentang Kami
                       </Link>
                     </li>
                     <li>
                       <Link
-                        smooth
                         className="font-blueberry tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
-                        to={'/#faq'}
-                        scroll={el => scrollWithOffset(el, 'faq')}
+                        href={'/#faq'}
+                        scroll={false}
                       >
                         FAQ
                       </Link>
@@ -244,16 +239,15 @@ export const Navbar = () => {
                     <li>
                       {event?.length > 0 ? (
                         <Link
-                          to='/event'
+                          href='/event'
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-blueberry tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 focus:shadow-outline focus:outline-none"
                         >
                           NEW Event!
                         </Link>
                       ) : (
                         <Link
-                          smooth
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-blueberry tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 focus:shadow-outline focus:outline-none"
-                          to={'/#ContentThumbnail'}
+                          href={'/#ContentThumbnail'}
                         >
                           Kenalan Yuk
                         </Link>
@@ -264,7 +258,7 @@ export const Navbar = () => {
               </div>
             </div>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

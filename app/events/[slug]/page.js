@@ -2,14 +2,14 @@ import Head from 'next/head';
 import styles from '../../page.module.css'
 import { Metadata, ResolvingMetadata } from 'next';
 import moment from "moment";
+import { getEventBySlug } from '@/services/events';
 const IconBroadcast = '/assets/images/Events/IconBroadcast.png'
 const IconPlay = '/assets/images/Events/IconPlay.png'
 
 export default async function Event({ params: {slug}}) {
-    const response = await getData(slug);
+    const response = await getEventBySlug(slug);
     const today = moment().format("YYYY-MM-DD HH:mm:ss");
    
-    // console.log("data",data.data)
     const data = response.data.length > 0? 
                 response.data[0] : null
     let linkIframe = data?.link_siaran_ulang !== null? ("//www.youtube.com/embed/" + data.link_siaran_ulang) : ''
@@ -176,7 +176,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     const slug = params.slug;
    
     // fetch data
-    const response = await getData(slug);
+    const response = await getEventBySlug(slug);
     const data = response?.data[0]
     // optionally access and extend (rather than replace) parent metadata
     // const previousImages = (await parent).openGraph?.images || [];
@@ -217,17 +217,4 @@ export async function generateMetadata({ params, searchParams }, parent) {
         images: [process.env.DIMULAI_CMS_ASSET_URL + "/"+ data.Gambar_banner_event],
       },
     };
-  }
-async function getData(slug) {
-    const res = await fetch(`https://dev.cms.dimulai.apps360.id/items/Event?filter[slug][_eq]=${slug}`);
-    // The return value is *not* serialized
-    // You can return Date, Map, Set, etc.
-    console.log("res",res)
-    // Recommendation: handle errors
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch data');
-    }
-   
-    return res.json();
   }

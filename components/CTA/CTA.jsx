@@ -11,7 +11,6 @@ const CTA = () => {
     const [formArray, setFormArray] = useState([]);
     const [checkedSK, setCheckedSK] = useState("");
 
-
     const saveNews = () => {
         var base = "https://dev.svc.dimulai.apps360.id";
         fetch(`${base}/v1/public/email/subscribe`, {
@@ -87,7 +86,7 @@ const CTA = () => {
                             <p className="mb-8 text-lg text-white font-blueberryreg">
                                 Ikuti terus info terbaru tentang diskon, event, dan banyak lainnya lewat newsletter hanya untuk kamu!
                             </p>
-                            <a href="javascript:void(0)" type='button' onClick={() => setShowModal(true)} className="text-primary w-80 font-blueberryreg inline-block rounded-lg border border-white px-8 py-3 mt-12 text-center text-base font-semibold bg-white">
+                            <a type='button' onClick={() => setShowModal(true)} className="text-primary w-80 font-blueberryreg inline-block rounded-lg border border-white px-8 py-3 mt-12 text-center text-base font-semibold bg-white">
                                 Langganan Sekarang
                             </a>
                         </div>
@@ -107,14 +106,14 @@ const CTA = () => {
                     
                     <div className="max-sm:w-80 max-w-md mx-auto mt-24 md:h-auto">
                         <div className="relative bg-white rounded-lg shadow">
-                            <img src={Img1} className="mx-auto pt-10" alt="" srcset="" />
+                            <img src={Img1} className="mx-auto pt-10" alt="" />
                             <button 
                               type="button" 
                               className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-300 dark:hover:text-white" 
                               data-modal-toggle="authentication-modal" 
                               onClick={handleCloseModal}
                             >
-                                <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                 <span className="sr-only">Close modal</span>
                             </button>
                             <div className="px-6 py-6 lg:px-8">

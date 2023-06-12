@@ -7,6 +7,7 @@ import Phone from './Phone.jsx';
 const ImgEvent = '/assets/heroEvent.png'
 export const Hero = ({ event }) => {
   const calculateTimeLeft = () => {
+   
     const currentTime = new Date().getTime();
     const eventTime = new Date(event[0]?.Tanggal_waktu_event).getTime();
     const maxTimeCountdown = new Date(moment().add(3,'d').toDate()).getTime();
@@ -26,7 +27,12 @@ export const Hero = ({ event }) => {
     }
   }
 
-  const [timeLeft, setTimeLeft] = useState(event?.length ? calculateTimeLeft() : null);
+  const [timeLeft, setTimeLeft] = useState("00:00:00");
+
+  useEffect(()=>{
+    localStorage.setItem("closest_event", JSON.stringify(event));
+    console.log("use Effect Hero localstorage")
+  },[])
 
   useEffect(() => {
     if (event?.length) {
@@ -67,7 +73,7 @@ export const Hero = ({ event }) => {
                     <a
                       href={event[0]?.Link_pendaftaran}
                       target="_blank"
-                      class="mr-4 mb-3 bg-emerald-500 justify-center py-4 px-6 font-blueberrymd text-white text-lg transition duration-200 rounded-lg hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      className="mr-4 mb-3 bg-emerald-500 justify-center py-4 px-6 font-blueberrymd text-white text-lg transition duration-200 rounded-lg hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                       aria-label="daftar"
                       title="daftar"
                     >

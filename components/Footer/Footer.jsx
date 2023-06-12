@@ -106,7 +106,7 @@ export const Footer = () => {
               <ul>
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href="#"
                     className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
                   >
                     Kebijakan Privasi
@@ -114,7 +114,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href="#"
                     className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
                   >
                     Syarat dan Ketentuan
