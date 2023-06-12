@@ -58,7 +58,7 @@ export const Navbar = () => {
           title="Dimulai"
           className="inline-flex items-center"
         >
-          <img src='assets/logodimulai.png' className="mr-3 h-8 rounded-full" alt="Logo" />
+          <img src='/assets/logodimulai.png' className="mr-3 h-8 rounded-full" alt="Logo" />
           <span className="ml-2 text-2xl font-blueberry tracking-wide text-gray-800 ">
             Dimulai
           </span>
@@ -67,7 +67,7 @@ export const Navbar = () => {
           <li>
           <Link
             className="font-blueberrymd tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
-            activeStyle={{ color: 'rgb(52 211 153)' }}
+            // activeStyle={{ color: 'rgb(52 211 153)' }}
             href='/#ContentThumbnail'
             scroll={false}
           >
@@ -76,9 +76,8 @@ export const Navbar = () => {
           </li>
           <li>
             <Link
-              smooth
               className="font-blueberrymd tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
-              activeStyle={{ color: 'rgb(52 211 153)' }}
+              // activeStyle={{ color: 'rgb(52 211 153)' }}
               href='/#product'
               scroll={false}
             >
@@ -87,9 +86,8 @@ export const Navbar = () => {
           </li>
           <li>
             <Link
-              smooth
               className="font-blueberrymd tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
-              activeStyle={{ color: 'rgb(52 211 153)' }}
+              // activeStyle={{ color: 'rgb(52 211 153)' }}
               href='/#about'
               scroll={false}
             >
@@ -98,16 +96,15 @@ export const Navbar = () => {
           </li>
           <li>
             <Link
-              smooth
               className="font-blueberrymd tracking-wide text-gray-700 transition-colors duration-200 hover:text-emerald-400"
-              activeStyle={{ color: 'rgb(52 211 153)' }}
+              // activeStyle={{ color: 'rgb(52 211 153)' }}
               href='/#faq'
               scroll={false}
             >
               FAQ
             </Link>
           </li>
-          {/* <li>
+          <li>
             <a
               href="#CTA"
               aria-label="CTA"
@@ -117,7 +114,7 @@ export const Navbar = () => {
               Promo
             </a>
           </li>
-          <li>
+          {/* <li>
             {event?.length > 0 ? (
               <Link
                 to='/event'

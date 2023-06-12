@@ -74,7 +74,7 @@ export const Hero = ({ event }) => {
                       Daftar Sekarang
                     </a>
                     <Link
-                      to={`/event/detail/${event[0].id}`}
+                      href={`/events/${event[0].slug}`}
                       className="mb-3 bg-gray-100 justify-center py-4 p-11 font-blueberry text-lg transition duration-200 rounded-lg hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                       style={{ color: '#323846' }}
                     >
@@ -83,7 +83,7 @@ export const Hero = ({ event }) => {
                     </>
                   ) : (
                     <Link
-                      to={`/event/detail/${event[0].id}`}
+                      href={`/event/detail/${event[0].id}`}
                       className="mr-4 mb-3 bg-emerald-500 justify-center py-4 p-11 font-blueberrymd text-white text-lg transition duration-200 rounded-lg hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                     >
                       Lihat Event
@@ -92,7 +92,7 @@ export const Hero = ({ event }) => {
                 </div>
               </div>
               <div className="flex justify-end items-end md:flex hidden">
-                <img src={ImgEvent} className="xl:h-[440px] lg:h-[380px] sm:h-[300px] lg:w-[500px] xl:w-[505px] sm:w-[440px]" />
+                <img alt='Gambar Banner Event' src={ImgEvent} className="xl:h-[440px] lg:h-[380px] sm:h-[300px] lg:w-[500px] xl:w-[505px] sm:w-[440px]" />
               </div>
             </div>
           </div>

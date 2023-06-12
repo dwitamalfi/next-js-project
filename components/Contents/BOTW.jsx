@@ -11,7 +11,7 @@ const BOTW = () => {
         <>
           <div className="pt-6 pb-12 -mt-36">
             <div id="card" className="">
-              <img src={Books} className="absolute sm:ml-10 md:ml-10 lg:ml-64 xl:ml-80 -mt-3"/>
+              <img alt='Gambar buku Seni Bersikap Bodo Amat' src={Books} className="absolute sm:ml-10 md:ml-10 lg:ml-64 xl:ml-80 -mt-3"/>
               <div className="container w-100 lg:w-3/5  mx-auto flex flex-col ">
                 <div v-for="card in cards" className="flex flex-col md:flex-row overflow-hidden rounded-xl shadow-xl  mt-4 lg:w-full mx-4 h-auto " style={{ backgroundColor: "#01C587" }} >
                   <div className="w-full ml-8 py-4 px-6 text-white flex flex-col justify-between">
@@ -29,7 +29,7 @@ const BOTW = () => {
                     
                   </div>
                   <div className="mx-auto lg:mt-10 xl:mt-10">
-                    <img src={Img3} className="w-60 md:mt-2 max-md:w-48 max-md:mb-10 mr-40"/>
+                    <img alt='Gambar ilustrasi' src={Img3} className="w-60 md:mt-2 max-md:w-48 max-md:mb-10 mr-40"/>
                   </div>
                 </div>
                 
@@ -52,7 +52,7 @@ const BOTW = () => {
                                      data-gtm-yt-inspected-2340190_699="true" id="240632615"></iframe>
                                 </div>
                                 <div className="">
-                                    <img src={Books} className="max-sm:ml-10" /><br /><br />
+                                    <img alt='Gambar ilustrasi' src={Books} className="max-sm:ml-10" /><br /><br />
                                     <h1 className=" md:text-3xl max-sm:ml-10 font-bold tracking-tight mb-5">
                                         <span> Seni untuk Bersikap Bodo Amat </span>
                                     </h1>
