@@ -198,7 +198,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
         publishedTime: data.date_updated,
       },
       robots: {
-        index: false,
+        index: true,
         follow: true,
         nocache: true,
         googleBot: {
