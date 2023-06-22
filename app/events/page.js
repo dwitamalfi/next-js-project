@@ -4,6 +4,7 @@ const ImgEvent = "/assets/images/Events/event_img.png";
 import { getEvent } from '@/services/events'
 import Link from 'next/link';
 import { ListEvent } from "@/components/Event/ListEvent";
+const gambar_event = '/assets/images/Events/test2.png'
 
 export default async function Event() {
   const now = moment().format("YYYY-MM-DD HH:mm:ss");
@@ -107,7 +108,7 @@ export default async function Event() {
             </div>
             <div className="flex justify-end items-end md:flex hidden">
               <img alt="gambar banner event"
-                src={ImgEvent}
+                src={`${process.env.DIMULAI_CMS_ASSET_URL}/${highlightEvent.Gambar_banner_event}`}
                 className="h-auto lg:w-[330px] xl:w-[356px] sm:w-[273px]"
               />
             </div>

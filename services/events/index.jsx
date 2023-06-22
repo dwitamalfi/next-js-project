@@ -2,7 +2,7 @@ export const getEvent = async (param) => {
     try {
         const response = await fetch(`https://dev.cms.dimulai.apps360.id/items/Event?page=${param.page}&limit=${[param.limit]}&search=${param.search}`,{
             method: 'GET',
-        });
+        },{ next: { revalidate: 60 } });
 
         return response.json(); 
     } catch (error) {

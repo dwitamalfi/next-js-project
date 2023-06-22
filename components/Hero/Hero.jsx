@@ -27,7 +27,7 @@ export const Hero = ({ event }) => {
     }
   }
 
-  const [timeLeft, setTimeLeft] = useState("00:00:00");
+  const [timeLeft, setTimeLeft] = useState("0 Hari 0 Jam 0 Min");
 
   useEffect(()=>{
     localStorage.setItem("closest_event", JSON.stringify(event));
@@ -45,7 +45,7 @@ export const Hero = ({ event }) => {
   return (
     <>
       {event?.length ? (
-        <div className="h-fit xl:mb-auto px-4 pt-16 lg:pt-32 md:px-8" id="Hero">
+        <div className="h-full xl:mb-auto px-4 pt-16 lg:pt-32 md:px-8" id="Hero">
           <div className="container mx-auto h-full">
             <div className="h-full lg:mx-20 pt-12 text-left flex justify-between">
               <div className="flex-col">
@@ -98,7 +98,7 @@ export const Hero = ({ event }) => {
                 </div>
               </div>
               <div className="flex justify-end items-end md:flex hidden">
-                <img alt='Gambar Banner Event' src={ImgEvent} className="xl:h-[440px] lg:h-[380px] sm:h-[300px] lg:w-[500px] xl:w-[505px] sm:w-[440px]" />
+                <img alt='Gambar Banner Event' src={`${process.env.DIMULAI_CMS_ASSET_URL}/${event[0].Gambar_banner_event}`} className="xl:h-[440px] lg:h-[380px] sm:h-[300px] w-auto" />
               </div>
             </div>
           </div>
