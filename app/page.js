@@ -21,7 +21,6 @@ export default async function Home() {
   };
 
   const data = await getEvent(param);
-  revalidateTag(data)
   const new_data = data.data.filter((item) => {
     const event_date = moment(item?.Tanggal_waktu_event)?.format(
       "YYYY-MM-DD"
