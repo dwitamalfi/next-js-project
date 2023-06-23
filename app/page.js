@@ -13,6 +13,8 @@ import { getEvent } from '@/services/events'
 import { revalidateTag } from 'next/cache'
 
 
+export const fetchCache = 'force-no-store';
+
 export default async function Home() {
   const param = {
     "page": 1,
