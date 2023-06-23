@@ -10,6 +10,7 @@ import FAQs from '@/components/FAQ/FAQs'
 import Youtube from '@/components/Youtube/Youtube'
 import moment from "moment";
 import { getEvent } from '@/services/events'
+import { revalidateTag } from 'next/cache'
 
 
 export default async function Home() {
@@ -20,6 +21,7 @@ export default async function Home() {
   };
 
   const data = await getEvent(param);
+  revalidateTag(data)
   const new_data = data.data.filter((item) => {
     const event_date = moment(item?.Tanggal_waktu_event)?.format(
       "YYYY-MM-DD"
